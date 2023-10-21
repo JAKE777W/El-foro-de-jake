@@ -1,0 +1,25 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>Foro de Chat Básico</title>
+</head>
+<body>
+    <div id="chat">
+        <div id="messages"></div>
+        <input type="text" id="message" placeholder="Escribe un mensaje">
+        <button onclick="enviarMensaje()">Enviar</button>
+    </div>
+
+    <script>
+        function enviarMensaje() {
+            var mensaje = document.getElementById("message").value;
+            if (mensaje) {
+                var div = document.createElement("div");
+                div.innerHTML = "Tú: " + mensaje;
+                document.getElementById("messages").appendChild(div);
+                document.getElementById("message").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
